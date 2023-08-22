@@ -1,0 +1,9 @@
+System A
+ping -p $(echo -n "cmd-<command>" | hexdump -v -e '/1 "%02x"') <System B's IP> -c 1
+
+
+System B
+
+tcpdump install: sudo yum install tcpdump -y
+tcpdump command: sudo tcpdump -x host <System A's IP> -c 1 -i eth0
+Python Script Command: python cmd_test_B.py
